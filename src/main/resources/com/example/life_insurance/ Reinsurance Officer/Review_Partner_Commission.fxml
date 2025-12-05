@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.life_insurance.Review_Partner_CommissionController">
+    <children>
+
+        <Label layoutX="30.0" layoutY="30.0" text="Start Date:" />
+        <DatePicker fx:id="startDate" layoutX="30.0" layoutY="50.0" onAction="#startDateOnAction" />
+
+        <Label layoutX="250.0" layoutY="30.0" text="End Date:" />
+        <DatePicker fx:id="endDate" layoutX="250.0" layoutY="50.0" onAction="#endDateOnAction" />
+
+        <Label layoutX="30.0" layoutY="100.0" text="Select Partner:" />
+        <ComboBox fx:id="partnerCb" layoutX="30.0" layoutY="120.0" onAction="#partnerCbOnAction" prefHeight="26.0" prefWidth="99.0" />
+
+        <Button fx:id="calcButton" layoutX="250.0" layoutY="120.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="126.0" text="Get Commission Data" />
+
+        <TableView fx:id="commTable" layoutX="30.0" layoutY="170.0" prefHeight="200.0" prefWidth="540.0">
+            <columns>
+                <TableColumn fx:id="colPartner" prefWidth="120.0" text="Partner" />
+                <TableColumn fx:id="colSales" prefWidth="100.0" text="Sales" />
+                <TableColumn fx:id="colRate" prefWidth="100.0" text="Rate" />
+                <TableColumn fx:id="colTotal" prefWidth="120.0" text="Commission" />
+                <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+            </columns>
+        </TableView>
+
+        <Button fx:id="approveButton" layoutX="464.0" layoutY="402.0" mnemonicParsing="false" onAction="#approveButtonOnAction" prefHeight="26.0" prefWidth="105.0" text="Set Status to REVIEWED" />
+
+    </children>
+</AnchorPane>

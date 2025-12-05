@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="436.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.life_insurance.Track_Expense_ClaimsController">
+    <children>
+
+        <!-- STEP 1: FILTERS -->
+        <Label layoutX="30.0" layoutY="30.0" text="Submission Date:" />
+        <DatePicker fx:id="submissionDp" layoutX="30.0" layoutY="50.0" onAction="#submissionDpOnAction" prefHeight="26.0" prefWidth="107.0" />
+
+        <Label layoutX="316.0" layoutY="30.0" text="Employee Name/Dept:" />
+        <TextField fx:id="empInput" layoutX="368.0" layoutY="50.0" prefHeight="26.0" prefWidth="67.0" />
+
+        <!-- STEP 2: FILTER BUTTON -->
+        <Button fx:id="filterButton" layoutX="30.0" layoutY="90.0" mnemonicParsing="false" onAction="#filterButtonOnAction" prefHeight="26.0" prefWidth="107.0" text="Filter Claims" />
+
+        <!-- STEP 3: THE TABLE -->
+        <TableView fx:id="claimsTable" layoutX="26.0" layoutY="140.0" prefHeight="114.0" prefWidth="398.0">
+            <columns>
+                <TableColumn fx:id="colId" prefWidth="80.0" text="ID" />
+                <TableColumn fx:id="colEmp" prefWidth="120.0" text="Employee" />
+                <TableColumn fx:id="colAmount" prefWidth="100.0" text="Amount" />
+                <TableColumn fx:id="colStatus" prefWidth="120.0" text="Status" />
+            </columns>
+        </TableView>
+
+        <!-- STEP 4: ACTION BUTTONS -->
+        <Label layoutX="27.0" layoutY="293.0" text="Select Action for Highlighted Claim:" />
+
+        <Button fx:id="approveButton" layoutX="30.0" layoutY="325.0" mnemonicParsing="false" onAction="#approveButtonOnAction" prefHeight="26.0" prefWidth="91.0" text="Approve Claim" wrapText="true" />
+
+        <Button fx:id="rejectButton" layoutX="161.0" layoutY="325.0" mnemonicParsing="false" onAction="#rejectButtonOnAction" prefHeight="26.0" prefWidth="74.0" text="Reject Claim" />
+
+        <!-- STEP 5: HISTORY LINK -->
+        <Button fx:id="historyButton" layoutX="332.0" layoutY="370.0" mnemonicParsing="false" onAction="#historyButtonOnAction" prefHeight="26.0" prefWidth="139.0" text="View Historical Data" />
+
+    </children>
+</AnchorPane>

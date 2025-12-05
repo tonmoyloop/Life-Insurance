@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="426.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.life_insurance.Process_Commission_PaymentsController">
+    <children>
+
+        <!-- STEP 1: DATE INPUTS -->
+        <Label layoutX="30.0" layoutY="30.0" text="Sales data:" />
+
+        <Label layoutX="250.0" layoutY="30.0" text="Commission Amount:" />
+
+        <!-- STEP 2: AGENT FILTER -->
+        <Label layoutX="30.0" layoutY="100.0" text="Agent Name:" />
+        <TextField fx:id="agentInput" layoutX="30.0" layoutY="120.0" prefHeight="26.0" prefWidth="82.0" />
+
+        <!-- STEP 3: CALCULATE BUTTON -->
+        <Button fx:id="saveButton" layoutX="34.0" layoutY="360.0" mnemonicParsing="false" onAction="#saveButtonOnAction" prefHeight="26.0" prefWidth="104.0" text="Save" />
+      <TextField fx:id="salesDataTF" layoutX="29.0" layoutY="48.0" prefHeight="26.0" prefWidth="70.0" />
+      <TextField fx:id="commissionAmountTF" layoutX="244.0" layoutY="48.0" prefHeight="26.0" prefWidth="114.0" />
+      <Text layoutX="250.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status:" />
+      <RadioButton fx:id="appRB" layoutX="301.0" layoutY="92.0" mnemonicParsing="false" text="Approved">
+         <toggleGroup>
+            <ToggleGroup fx:id="statusRB" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rejRB" layoutX="302.0" layoutY="112.0" mnemonicParsing="false" text="Reject" toggleGroup="$statusRB" />
+      <Text layoutX="23.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commission Data Details:" />
+      <TextArea fx:id="dataTextarea" layoutX="29.0" layoutY="213.0" prefHeight="131.0" prefWidth="384.0" wrapText="true" />
+
+    </children>
+</AnchorPane>

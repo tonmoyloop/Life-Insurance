@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="479.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.life_insurance.User_can_Record_Daily_TransactionsController">
+    <children>
+
+        <Label layoutX="30.0" layoutY="30.0" text="Policyholder Name:" />
+        <TextField fx:id="nameInput" layoutX="30.0" layoutY="50.0" prefHeight="26.0" prefWidth="103.0" />
+
+        <Label layoutX="320.0" layoutY="30.0" text="Payment Date:" />
+        <DatePicker fx:id="paymentDP" layoutX="320.0" layoutY="49.0" prefHeight="26.0" prefWidth="103.0" />
+
+        <Label layoutX="30.0" layoutY="100.0" text="Amount:" />
+        <TextField fx:id="amountInput" layoutX="30.0" layoutY="118.0" prefHeight="26.0" prefWidth="103.0" />
+
+        <Button fx:id="recordButton" layoutX="30.0" layoutY="167.0" mnemonicParsing="false" onAction="#recordButton" prefHeight="26.0" prefWidth="103.0" text="Record Transaction" />
+
+        <TableView fx:id="transTable" layoutX="30.0" layoutY="212.0" prefHeight="200.0" prefWidth="421.0">
+            <columns>
+                <TableColumn fx:id="colName" prefWidth="120.0" text="Name" />
+                <TableColumn fx:id="colAmount" prefWidth="100.0" text="Amount" />
+                <TableColumn fx:id="colDate" prefWidth="100.0" text="Date" />
+                <TableColumn fx:id="colStatus" prefWidth="100.0" text="Status" />
+            </columns>
+        </TableView>
+      <Label layoutX="320.0" layoutY="100.0" text="Status:" />
+      <RadioButton fx:id="yesRB" layoutX="320.0" layoutY="122.0" mnemonicParsing="false" text="Yes">
+         <toggleGroup>
+            <ToggleGroup fx:id="TransactionRB" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="NoRB" layoutX="320.0" layoutY="144.0" mnemonicParsing="false" text="No" toggleGroup="$TransactionRB" />
+      <Label fx:id="OutputLabel" layoutX="324.0" layoutY="165.0" prefHeight="38.0" prefWidth="154.0" text="Label" />
+
+    </children>
+</AnchorPane>
