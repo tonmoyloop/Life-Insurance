@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controllers.ComplianceCalendarController"
+            prefWidth="800" prefHeight="600">
+
+    <!-- Title -->
+    <Label text="Compliance Calendar" style="-fx-font-size: 24; -fx-font-weight: bold;"
+           AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10"
+           maxWidth="Infinity"/>
+
+    <!-- Calendar Placeholder (TableView) -->
+    <Label text="Calendar View:" AnchorPane.topAnchor="60" AnchorPane.leftAnchor="40"/>
+    <TableView fx:id="calendarTable" AnchorPane.topAnchor="80" AnchorPane.leftAnchor="40"
+               AnchorPane.rightAnchor="40" AnchorPane.bottomAnchor="250">
+        <columns>
+            <TableColumn fx:id="colDate" text="Date" prefWidth="150"/>
+            <TableColumn fx:id="colTasks" text="Tasks" prefWidth="500"/>
+        </columns>
+    </TableView>
+
+    <!-- Selected Task Info -->
+    <Label text="Selected Task:" AnchorPane.topAnchor="340" AnchorPane.leftAnchor="40"/>
+    <TextField fx:id="txtSelectedTask" promptText="Selected Task" editable="false"
+               AnchorPane.topAnchor="360" AnchorPane.leftAnchor="40" AnchorPane.rightAnchor="40" prefHeight="30"/>
+
+    <!-- Add Reminder -->
+    <Label text="Add Reminder:" AnchorPane.topAnchor="400" AnchorPane.leftAnchor="40"/>
+    <TextField fx:id="txtReminder" promptText="Add Reminder / Notification"
+               AnchorPane.topAnchor="420" AnchorPane.leftAnchor="40" AnchorPane.rightAnchor="300" prefHeight="30"/>
+    <Button fx:id="btnAddReminder" text="Add Reminder" onAction="#handleAddReminder"
+            AnchorPane.topAnchor="420" AnchorPane.leftAnchor="500" prefWidth="140" prefHeight="30"/>
+
+    <!-- Mark Task Completed -->
+    <Button fx:id="btnMarkCompleted" text="Mark Task Completed" onAction="#handleMarkCompleted"
+            AnchorPane.topAnchor="470" AnchorPane.leftAnchor="40" prefWidth="180" prefHeight="30"/>
+
+    <!-- Status Message -->
+    <Label fx:id="lblStatus" text="" style="-fx-text-fill: green;"
+           AnchorPane.leftAnchor="40" AnchorPane.bottomAnchor="60" AnchorPane.rightAnchor="40"/>
+
+    <!-- Logout Button -->
+    <Button fx:id="btnLogout" text="Logout" onAction="#handleLogout"
+            AnchorPane.rightAnchor="40" AnchorPane.bottomAnchor="20" prefWidth="100" prefHeight="30"/>
+
+</AnchorPane>
